@@ -8,22 +8,37 @@ ambiguous. No per-repo setup step.
 
 ## Install
 
-Clone the repo and link the skills into your local Claude Code skills
-directory:
+In Claude Code, add this repo as a plugin marketplace and install the plugin:
+
+```
+/plugin marketplace add hsmejky/skills
+/plugin install honzik-skills@honzik-skills
+```
+
+Then **paste the [Skill-trigger cheatsheet](#skill-trigger-cheatsheet) block
+below into your `~/.claude/CLAUDE.md`**. Without it, skills still auto-fire
+from their `description:` triggers, but the cheatsheet keeps your shortcuts
+discoverable across sessions.
+
+### Updating
+
+```
+/plugin update honzik-skills@honzik-skills
+```
+
+When a new tagged release lands, re-paste the cheatsheet block from this
+README into your `~/.claude/CLAUDE.md` to pick up new skills' triggers.
+
+### Local development install (contributors)
+
+If you're hacking on this repo locally, symlink the skills into
+`~/.claude/skills/` instead:
 
 ```bash
-git clone https://github.com/<your-username>/skills.git
+git clone https://github.com/hsmejky/skills.git
 cd skills
 bash scripts/link-skills.sh
 ```
-
-`link-skills.sh` symlinks every `SKILL.md` folder into `~/.claude/skills/` so
-that the slash commands (`/debug`, `/tdd`, `/to-issues`, etc.) are
-available across all your Claude Code sessions.
-
-Alternatively, point Claude Code at this repo as a plugin via
-`.claude-plugin/plugin.json` (the `engineering-skills` plugin), or symlink
-individual skill folders into your project's `.claude/skills/` directory.
 
 ## Skills
 

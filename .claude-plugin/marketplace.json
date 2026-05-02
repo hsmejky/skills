@@ -1,0 +1,13 @@
+{
+  "name": "honzik-skills",
+  "owner": {
+    "name": "Jan Smejkal"
+  },
+  "plugins": [
+    {
+      "name": "honzik-skills",
+      "source": "./",
+      "description": "Personal Claude Code skills — opinionated workflow tools for analyze → plan → implement → review, plus utilities."
+    }
+  ]
+}
