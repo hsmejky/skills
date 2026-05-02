@@ -31,6 +31,9 @@ individual skill folders into your project's `.claude/skills/` directory.
 
 - **[debug](./skills/engineering/debug/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
 - **[improve-architecture](./skills/engineering/improve-architecture/SKILL.md)** — Find deepening opportunities by reading the code; output proposals to a markdown file or inline.
+- **[review](./skills/engineering/review/SKILL.md)** — Two-tier review of code against project documentation. Auto-detects active dimensions (doc fidelity, business logic, tests, simplicity, security; deep mode adds perf, concurrency, error handling, deps, API contract, migrations, architecture).
+- **[review-design](./skills/engineering/review-design/SKILL.md)** — Standalone reviewer for a design artifact (decision log from /grill-me, or freeform design doc). Checks resolution, consistency, reasoning, scope, coverage, unaddressed concerns.
+- **[review-plan](./skills/engineering/review-plan/SKILL.md)** — Standalone reviewer for an implementation plan (vertical-slice checklist from /to-issues). Checks vertical slicing, AC concreteness, dependencies, granularity, HITL/AFK honesty, coverage against design.
 - **[tdd](./skills/engineering/tdd/SKILL.md)** — Test-driven development with a red-green-refactor loop. One vertical slice at a time.
 - **[to-issues](./skills/engineering/to-issues/SKILL.md)** — Break a plan into independently-grabbable vertical slices, emitted as a checkbox markdown plan.
 - **[triage](./skills/engineering/triage/SKILL.md)** — Evaluate an incoming bug report or feature request — reproduce, analyze, grill, emit structured triage notes.
@@ -69,8 +72,8 @@ Add to `~/.claude/CLAUDE.md`:
 ```markdown
 ## Skill triggers (auto-fire when prompt matches)
 
-Workflow: /grill-me (analyze) → /to-issues (plan) → /tdd (implement).
-/debug and /triage handle bugs and incoming reports separately.
+Workflow: /grill-me (analyze) → /to-issues (plan) → /tdd (implement) → /review (verify).
+/debug and /triage handle bugs and incoming reports separately. /review also works standalone for reviewing colleagues' branches or PRs.
 
 - "analyze / think through / design X / how to approach / review my
   approach / challenge / poke holes / ask me questions" → /grill-me
@@ -78,6 +81,13 @@ Workflow: /grill-me (analyze) → /to-issues (plan) → /tdd (implement).
   into steps / break down / checklist" → /to-issues
 - "implement / build / add a feature / code this up / create / develop /
   make X work" → /tdd
+- "review this / review the branch / review the PR / review the changes /
+  code review / audit this code / deep review / thorough review /
+  full audit" → /review
+- "review my design / review the decisions / check my design / is this
+  design sound / audit the design / review the design doc" → /review-design
+- "review my plan / check the slices / are these slices vertical /
+  review the implementation plan / audit the plan" → /review-plan
 - "diagnose / debug / why is X failing / fix this error / X is slow"
   → /debug
 - "triage / evaluate this bug report / is this worth fixing / review this

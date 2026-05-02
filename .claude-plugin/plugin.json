@@ -3,6 +3,9 @@
   "skills": [
     "./skills/engineering/debug",
     "./skills/engineering/improve-architecture",
+    "./skills/engineering/review",
+    "./skills/engineering/review-design",
+    "./skills/engineering/review-plan",
     "./skills/engineering/tdd",
     "./skills/engineering/to-issues",
     "./skills/engineering/triage",

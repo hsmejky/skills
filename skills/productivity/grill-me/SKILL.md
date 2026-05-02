@@ -24,7 +24,7 @@ Write at the end of the session. If the user says "save this" mid-session, ask w
 Output format:
 
 ```markdown
-# <topic> — grilling session
+# <topic> — design
 
 ## Q1: <question>
 **Decided**: <decision>
@@ -35,3 +35,9 @@ Output format:
 ```
 
 Capture resolved decisions only — unresolved or skipped branches are noise.
+
+## Suggest next step
+
+After capturing (or at end of inline-only sessions), append one line:
+
+`design captured. next: /review-design to sanity-check, /to-issues to plan, or save here?`
