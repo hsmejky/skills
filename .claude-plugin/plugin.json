@@ -1,16 +1,14 @@
 {
-  "name": "mattpocock-skills",
+  "name": "engineering-skills",
   "skills": [
     "./skills/engineering/diagnose",
-    "./skills/engineering/grill-with-docs",
-    "./skills/engineering/triage",
     "./skills/engineering/improve-codebase-architecture",
-    "./skills/engineering/setup-matt-pocock-skills",
     "./skills/engineering/tdd",
     "./skills/engineering/to-issues",
-    "./skills/engineering/to-prd",
+    "./skills/engineering/triage",
     "./skills/engineering/zoom-out",
     "./skills/productivity/caveman",
+    "./skills/productivity/git-guardrails-claude-code",
     "./skills/productivity/grill-me",
     "./skills/productivity/write-a-skill"
   ]

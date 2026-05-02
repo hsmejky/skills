@@ -44,7 +44,7 @@ RIGHT (vertical):
 
 ### 1. Planning
 
-When exploring the codebase, use the project's domain glossary so that test names and interface vocabulary match the project's language, and respect ADRs in the area you're touching.
+When exploring the codebase, look for whatever the repo uses to capture domain language and architectural decisions (e.g. `CONTEXT.md`, `GLOSSARY.md`, `docs/adr/`, or whatever `CLAUDE.md` points at). If found, name tests and interfaces with that vocabulary and respect those decisions. If not, use the names from the code.
 
 Before writing any code:
 

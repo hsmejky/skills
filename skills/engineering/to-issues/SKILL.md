@@ -1,81 +1,71 @@
 ---
 name: to-issues
-description: Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices. Use when user wants to convert a plan into issues, create implementation tickets, or break down work into issues.
+description: Break a plan, spec, or PRD into independently-grabbable vertical slices, emitted as a checkbox markdown plan. Use when user wants to convert a plan into slices, tickets, or a working checklist.
 ---
 
 # To Issues
 
-Break a plan into independently-grabbable issues using vertical slices (tracer bullets).
+Break a plan into independently-grabbable slices using tracer bullets (thin vertical cuts through every layer).
 
-The issue tracker and triage label vocabulary should have been provided to you — run `/setup-matt-pocock-skills` if not.
+## 1. Locate the output
 
-## Process
+Check the invoking prompt and `CLAUDE.md` for where the output should go. Three valid targets:
 
-### 1. Gather context
+- A **file path** the user specified — write the markdown there.
+- **Inline in the conversation** — print the markdown back, no file.
+- A **directory convention** the user has (e.g. `.scratch/<feature>.md`, `plans/`, `docs/work/`) — write inside it.
 
-Work from whatever is already in the conversation context. If the user passes an issue reference (issue number, URL, or path) as an argument, fetch it from the issue tracker and read its full body and comments.
+If none of those is specified, ask once before drafting:
 
-### 2. Explore the codebase (optional)
+> Where should the plan land — a file path, or just print it back here?
 
-If you have not already explored the codebase, do so to understand the current state of the code. Issue titles and descriptions should use the project's domain glossary vocabulary, and respect ADRs in the area you're touching.
+## 2. Gather context
 
-### 3. Draft vertical slices
+Work from whatever is in the conversation. If the user passes a file path or URL as an argument, read it first.
 
-Break the plan into **tracer bullet** issues. Each issue is a thin vertical slice that cuts through ALL integration layers end-to-end, NOT a horizontal slice of one layer.
+## 3. Draft vertical slices
 
-Slices may be 'HITL' or 'AFK'. HITL slices require human interaction, such as an architectural decision or a design review. AFK slices can be implemented and merged without human interaction. Prefer AFK over HITL where possible.
+Each slice is a **tracer bullet** — a thin cut through every layer (schema, API, UI, tests), demoable on its own. Mark each slice **HITL** (needs human interaction) or **AFK** (an agent can take it end-to-end). Prefer AFK over HITL where possible.
 
 <vertical-slice-rules>
-- Each slice delivers a narrow but COMPLETE path through every layer (schema, API, UI, tests)
+- Each slice delivers a narrow but COMPLETE path through every layer
 - A completed slice is demoable or verifiable on its own
 - Prefer many thin slices over few thick ones
 </vertical-slice-rules>
 
-### 4. Quiz the user
+## 4. Quiz the user
 
-Present the proposed breakdown as a numbered list. For each slice, show:
+Show the proposed breakdown as a numbered list. For each slice:
 
 - **Title**: short descriptive name
 - **Type**: HITL / AFK
-- **Blocked by**: which other slices (if any) must complete first
-- **User stories covered**: which user stories this addresses (if the source material has them)
+- **Blocked by**: which other slices must complete first
+- **User stories covered**: which user stories this addresses (if the source had them)
 
-Ask the user:
+Ask:
 
-- Does the granularity feel right? (too coarse / too fine)
-- Are the dependency relationships correct?
-- Should any slices be merged or split further?
-- Are the correct slices marked as HITL and AFK?
+- Granularity right? (too coarse / too fine)
+- Dependencies right?
+- HITL/AFK marking right?
 
-Iterate until the user approves the breakdown.
+Iterate until the user approves.
 
-### 5. Publish the issues to the issue tracker
+## 5. Emit
 
-For each approved slice, publish a new issue to the issue tracker. Use the issue body template below. Apply the `needs-triage` triage label so each issue enters the normal triage flow.
+Write the approved breakdown using this template, to the target picked in step 1:
 
-Publish issues in dependency order (blockers first) so you can reference real issue identifiers in the "Blocked by" field.
+<plan-template>
+# <feature> — implementation plan
 
-<issue-template>
-## Parent
+## Slice 1 — <title> (AFK | HITL)
+**What to build**: <one-paragraph description of the end-to-end behavior, not layer-by-layer implementation>
+**Blocked by**: none | Slice <N>
 
-A reference to the parent issue on the issue tracker (if the source was an existing issue, otherwise omit this section).
+- [ ] <acceptance criterion 1>
+- [ ] <acceptance criterion 2>
 
-## What to build
+## Slice 2 — <title> (AFK | HITL)
+...
+</plan-template>
 
-A concise description of this vertical slice. Describe the end-to-end behavior, not layer-by-layer implementation.
-
-## Acceptance criteria
-
-- [ ] Criterion 1
-- [ ] Criterion 2
-- [ ] Criterion 3
-
-## Blocked by
-
-- A reference to the blocking ticket (if any)
-
-Or "None - can start immediately" if no blockers.
-
-</issue-template>
-
-Do NOT close or modify any parent issue.
+Slices are H2 headings so they fold cleanly. Each slice gets its own checkbox group. The user works the plan top-down, ticking criteria as slices land.
