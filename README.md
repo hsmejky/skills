@@ -29,6 +29,7 @@ individual skill folders into your project's `.claude/skills/` directory.
 
 ### Engineering — daily code work
 
+- **[commit](./skills/engineering/commit/SKILL.md)** — Create one Conventional Commits commit with imperative subject ≤72 chars, no scope, no body, no co-author footer. Categorizes untracked, scans staged content for secrets and local paths, suggests splitting when diff spans multiple dirs or types.
 - **[debug](./skills/engineering/debug/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
 - **[improve-architecture](./skills/engineering/improve-architecture/SKILL.md)** — Find deepening opportunities by reading the code; output proposals to a markdown file or inline.
 - **[review](./skills/engineering/review/SKILL.md)** — Two-tier review of code against project documentation. Auto-detects active dimensions (doc fidelity, business logic, tests, simplicity, security; deep mode adds perf, concurrency, error handling, deps, API contract, migrations, architecture).
@@ -98,6 +99,7 @@ Workflow: /grill-me (analyze) → /to-issues (plan) → /tdd (implement) → /re
   overview / bigger picture" → /zoom-out
 - "be brief / shorter / terse / less tokens / no filler / less verbose"
   → /caveman
+- "commit this / make a commit / create a commit" → /commit
 - "new skill / make a skill / scaffold a skill / add slash command /
   skill template" → /write-a-skill
 ```

@@ -2,6 +2,7 @@
 
 Skills for daily code work.
 
+- **[commit](./commit/SKILL.md)** — Create one Conventional Commits commit (feat/fix/docs/...) with imperative subject ≤72 chars, no scope, no body, no co-author footer. Stages tracked-modified or commits pre-staged set. Categorizes untracked, scans staged content for secrets and local paths, suggests splitting when diff spans multiple dirs or types.
 - **[debug](./debug/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
 - **[improve-architecture](./improve-architecture/SKILL.md)** — Find deepening opportunities by reading the code; output proposals to a markdown file or inline.
 - **[review](./review/SKILL.md)** — Two-tier review of code against project documentation. Auto-detects active dimensions (doc fidelity, business logic, tests, simplicity, security; deep mode adds perf, concurrency, error handling, deps, API contract, migrations, architecture).

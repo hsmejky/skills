@@ -1,6 +1,7 @@
 {
   "name": "engineering-skills",
   "skills": [
+    "./skills/engineering/commit",
     "./skills/engineering/debug",
     "./skills/engineering/improve-architecture",
     "./skills/engineering/review",
