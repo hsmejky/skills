@@ -11,7 +11,7 @@ ambiguous. No per-repo setup step.
 In Claude Code, add this repo as a plugin marketplace and install the plugin:
 
 ```
-/plugin marketplace add hsmejky/skills
+/plugin marketplace add https://github.com/hsmejky/skills
 /plugin install honzik-skills@honzik-skills
 ```
 
