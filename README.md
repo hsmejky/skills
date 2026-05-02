@@ -27,24 +27,19 @@ individual skill folders into your project's `.claude/skills/` directory.
 
 ## Skills
 
-### Engineering — daily code work
-
-- **[commit](./skills/engineering/commit/SKILL.md)** — Create one Conventional Commits commit with imperative subject ≤72 chars, no scope, no body, no co-author footer. Categorizes untracked, scans staged content for secrets and local paths, suggests splitting when diff spans multiple dirs or types.
-- **[debug](./skills/engineering/debug/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
-- **[improve-architecture](./skills/engineering/improve-architecture/SKILL.md)** — Find deepening opportunities by reading the code; output proposals to a markdown file or inline.
-- **[review](./skills/engineering/review/SKILL.md)** — Two-tier review of code against project documentation. Auto-detects active dimensions (doc fidelity, business logic, tests, simplicity, security; deep mode adds perf, concurrency, error handling, deps, API contract, migrations, architecture).
-- **[review-design](./skills/engineering/review-design/SKILL.md)** — Standalone reviewer for a design artifact (decision log from /grill-me, or freeform design doc). Checks resolution, consistency, reasoning, scope, coverage, unaddressed concerns.
-- **[review-plan](./skills/engineering/review-plan/SKILL.md)** — Standalone reviewer for an implementation plan (vertical-slice checklist from /to-issues). Checks vertical slicing, AC concreteness, dependencies, granularity, HITL/AFK honesty, coverage against design.
-- **[tdd](./skills/engineering/tdd/SKILL.md)** — Test-driven development with a red-green-refactor loop. One vertical slice at a time.
-- **[to-issues](./skills/engineering/to-issues/SKILL.md)** — Break a plan into independently-grabbable vertical slices, emitted as a checkbox markdown plan.
-- **[triage](./skills/engineering/triage/SKILL.md)** — Evaluate an incoming bug report or feature request — reproduce, analyze, grill, emit structured triage notes.
-- **[zoom-out](./skills/engineering/zoom-out/SKILL.md)** — Higher-level map of the relevant modules and callers in an unfamiliar area of the codebase.
-
-### Productivity — workflow tools
-
-- **[caveman](./skills/productivity/caveman/SKILL.md)** — Ultra-compressed communication mode. ~75% token reduction.
-- **[grill-me](./skills/productivity/grill-me/SKILL.md)** — Relentlessly interviewed about a plan or design until every branch of the decision tree is resolved. Optionally captures resolved decisions to a markdown file.
-- **[write-a-skill](./skills/productivity/write-a-skill/SKILL.md)** — Create new skills with proper structure, progressive disclosure, and bundled resources.
+- **[caveman](./skills/caveman/SKILL.md)** — Ultra-compressed communication mode. ~75% token reduction.
+- **[commit](./skills/commit/SKILL.md)** — Create one Conventional Commits commit with imperative subject ≤72 chars, no scope, no body, no co-author footer. Categorizes untracked, scans staged content for secrets and local paths, suggests splitting when diff spans multiple dirs or types.
+- **[debug](./skills/debug/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
+- **[grill-me](./skills/grill-me/SKILL.md)** — Relentlessly interviewed about a plan or design until every branch of the decision tree is resolved. Optionally captures resolved decisions to a markdown file.
+- **[improve-architecture](./skills/improve-architecture/SKILL.md)** — Find deepening opportunities by reading the code; output proposals to a markdown file or inline.
+- **[review](./skills/review/SKILL.md)** — Two-tier review of code against project documentation. Auto-detects active dimensions (doc fidelity, business logic, tests, simplicity, security; deep mode adds perf, concurrency, error handling, deps, API contract, migrations, architecture).
+- **[review-design](./skills/review-design/SKILL.md)** — Standalone reviewer for a design artifact (decision log from /grill-me, or freeform design doc). Checks resolution, consistency, reasoning, scope, coverage, unaddressed concerns.
+- **[review-plan](./skills/review-plan/SKILL.md)** — Standalone reviewer for an implementation plan (vertical-slice checklist from /to-issues). Checks vertical slicing, AC concreteness, dependencies, granularity, HITL/AFK honesty, coverage against design.
+- **[tdd](./skills/tdd/SKILL.md)** — Test-driven development with a red-green-refactor loop. One vertical slice at a time.
+- **[to-issues](./skills/to-issues/SKILL.md)** — Break a plan into independently-grabbable vertical slices, emitted as a checkbox markdown plan.
+- **[triage](./skills/triage/SKILL.md)** — Evaluate an incoming bug report or feature request — reproduce, analyze, grill, emit structured triage notes.
+- **[write-a-skill](./skills/write-a-skill/SKILL.md)** — Create new skills with proper structure, progressive disclosure, and bundled resources.
+- **[zoom-out](./skills/zoom-out/SKILL.md)** — Higher-level map of the relevant modules and callers in an unfamiliar area of the codebase.
 
 ## Getting the most out of these skills
 

@@ -1,18 +1,18 @@
 {
   "name": "engineering-skills",
   "skills": [
-    "./skills/engineering/commit",
-    "./skills/engineering/debug",
-    "./skills/engineering/improve-architecture",
-    "./skills/engineering/review",
-    "./skills/engineering/review-design",
-    "./skills/engineering/review-plan",
-    "./skills/engineering/tdd",
-    "./skills/engineering/to-issues",
-    "./skills/engineering/triage",
-    "./skills/engineering/zoom-out",
-    "./skills/productivity/caveman",
-    "./skills/productivity/grill-me",
-    "./skills/productivity/write-a-skill"
+    "./skills/caveman",
+    "./skills/commit",
+    "./skills/debug",
+    "./skills/grill-me",
+    "./skills/improve-architecture",
+    "./skills/review",
+    "./skills/review-design",
+    "./skills/review-plan",
+    "./skills/tdd",
+    "./skills/to-issues",
+    "./skills/triage",
+    "./skills/write-a-skill",
+    "./skills/zoom-out"
   ]
 }
