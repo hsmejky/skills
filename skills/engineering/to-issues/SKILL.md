@@ -1,6 +1,6 @@
 ---
 name: to-issues
-description: Break a plan, spec, or PRD into independently-grabbable vertical slices, emitted as a checkbox markdown plan. Use when user wants to convert a plan into slices, tickets, or a working checklist.
+description: Break a plan, spec, or PRD into independently-grabbable vertical slices, emitted as a checkbox markdown plan. The "plan" phase of the workflow. Use when user says "plan this", "make a plan", "implementation plan", "break this down", "break into slices", "split this up", "list the steps", "what are the steps", "create a checklist", "checklist for X", or wants to convert a plan into slices, tickets, or a working checklist.
 ---
 
 # To Issues

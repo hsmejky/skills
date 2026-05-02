@@ -1,6 +1,6 @@
 ---
 name: triage
-description: Evaluate an incoming bug report or feature request — reproduce, analyze, grill the reporter for missing detail, and emit structured triage notes. Use when user wants to assess an incoming bug or request.
+description: Evaluate an incoming bug report or feature request — reproduce, analyze, grill the reporter for missing detail, and emit structured triage notes. Use when user says "triage this", "triage this issue", "evaluate this bug report", "is this a real bug", "is this worth fixing", "should we fix this", "review this incoming report", "what kind of issue is this", "is this a bug or enhancement", or wants to assess an incoming bug or request.
 ---
 
 # Triage

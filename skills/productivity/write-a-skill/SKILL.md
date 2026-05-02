@@ -1,6 +1,6 @@
 ---
 name: write-a-skill
-description: Create new agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, or build a new skill.
+description: Create new agent skills with proper structure, progressive disclosure, and bundled resources. Use when user says "make a new skill", "make a skill", "create a new skill", "write a new skill", "build a new skill", "scaffold a skill", "add a slash command", "create a slash command", "skill template", "new skill template", "new agent skill", "I want to add a skill for X", or wants to create, write, or build a new skill.
 ---
 
 # Writing Skills

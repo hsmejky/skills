@@ -1,9 +1,9 @@
 ---
-name: improve-codebase-architecture
-description: Find deepening opportunities in a codebase by reading the code itself. Output proposals to a markdown file or inline. Use when the user wants to improve architecture, find refactoring opportunities, consolidate tightly-coupled modules, or make a codebase more testable.
+name: improve-architecture
+description: Find deepening opportunities in a codebase by reading the code itself. Output proposals to a markdown file or inline. Use when the user wants to improve architecture, clean up code, deepen modules, find shallow modules, audit architecture, do an architecture review, mentions "ball of mud", "messy code", "how can I improve this design", consolidate tightly-coupled modules, or make a codebase more testable.
 ---
 
-# Improve Codebase Architecture
+# Improve Architecture
 
 Surface architectural friction and propose **deepening opportunities** — refactors that turn shallow modules into deep ones. Read architecture from the code itself.
 

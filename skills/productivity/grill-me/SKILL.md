@@ -1,6 +1,6 @@
 ---
 name: grill-me
-description: Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Optionally captures resolved decisions to a markdown file. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me".
+description: Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Optionally captures resolved decisions to a markdown file. The "analyze" phase of the workflow. Use when user says "analyze how to implement X", "analyze this approach", "think through this", "how should I approach X", "best approach for X", "review my approach", "challenge my design", "design X", "ask me questions", "interrogate me about X", "what should I consider", "what am I missing", "poke holes in this", wants to stress-test a plan, get grilled on their design, or mentions "grill me".
 ---
 
 Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.

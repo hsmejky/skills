@@ -18,7 +18,7 @@ bash scripts/link-skills.sh
 ```
 
 `link-skills.sh` symlinks every `SKILL.md` folder into `~/.claude/skills/` so
-that the slash commands (`/diagnose`, `/tdd`, `/to-issues`, etc.) are
+that the slash commands (`/debug`, `/tdd`, `/to-issues`, etc.) are
 available across all your Claude Code sessions.
 
 Alternatively, point Claude Code at this repo as a plugin via
@@ -29,8 +29,8 @@ individual skill folders into your project's `.claude/skills/` directory.
 
 ### Engineering — daily code work
 
-- **[diagnose](./skills/engineering/diagnose/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
-- **[improve-codebase-architecture](./skills/engineering/improve-codebase-architecture/SKILL.md)** — Find deepening opportunities by reading the code; output proposals to a markdown file or inline.
+- **[debug](./skills/engineering/debug/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
+- **[improve-architecture](./skills/engineering/improve-architecture/SKILL.md)** — Find deepening opportunities by reading the code; output proposals to a markdown file or inline.
 - **[tdd](./skills/engineering/tdd/SKILL.md)** — Test-driven development with a red-green-refactor loop. One vertical slice at a time.
 - **[to-issues](./skills/engineering/to-issues/SKILL.md)** — Break a plan into independently-grabbable vertical slices, emitted as a checkbox markdown plan.
 - **[triage](./skills/engineering/triage/SKILL.md)** — Evaluate an incoming bug report or feature request — reproduce, analyze, grill, emit structured triage notes.
@@ -39,9 +39,65 @@ individual skill folders into your project's `.claude/skills/` directory.
 ### Productivity — workflow tools
 
 - **[caveman](./skills/productivity/caveman/SKILL.md)** — Ultra-compressed communication mode. ~75% token reduction.
-- **[git-guardrails-claude-code](./skills/productivity/git-guardrails-claude-code/SKILL.md)** — Hooks that block dangerous git commands (push, reset --hard, clean, etc.) before they execute.
 - **[grill-me](./skills/productivity/grill-me/SKILL.md)** — Relentlessly interviewed about a plan or design until every branch of the decision tree is resolved. Optionally captures resolved decisions to a markdown file.
 - **[write-a-skill](./skills/productivity/write-a-skill/SKILL.md)** — Create new skills with proper structure, progressive disclosure, and bundled resources.
+
+## Getting the most out of these skills
+
+These skills auto-fire when Claude detects a matching phrase in your
+prompt — the triggers live in each skill's `description:` field. To make
+auto-fire frictionless across every session, configure your **user-level
+`~/.claude/CLAUDE.md`** with the two blocks below.
+
+### Always-on caveman
+
+Add to `~/.claude/CLAUDE.md`:
+
+```markdown
+Default communication style: caveman mode (see /caveman skill).
+Drop articles, filler, pleasantries; keep technical terms exact.
+Off only when I say "normal mode".
+```
+
+This references the skill rather than inlining the rules — the skill body
+still loads when invoked, so you only update rules in one place.
+
+### Skill-trigger cheatsheet
+
+Add to `~/.claude/CLAUDE.md`:
+
+```markdown
+## Skill triggers (auto-fire when prompt matches)
+
+Workflow: /grill-me (analyze) → /to-issues (plan) → /tdd (implement).
+/debug and /triage handle bugs and incoming reports separately.
+
+- "analyze / think through / design X / how to approach / review my
+  approach / challenge / poke holes / ask me questions" → /grill-me
+- "plan / make a plan / implementation plan / break into slices / split
+  into steps / break down / checklist" → /to-issues
+- "implement / build / add a feature / code this up / create / develop /
+  make X work" → /tdd
+- "diagnose / debug / why is X failing / fix this error / X is slow"
+  → /debug
+- "triage / evaluate this bug report / is this worth fixing / review this
+  incoming issue / what kind of issue" → /triage
+- "clean up / deepen modules / audit design / architecture review / ball
+  of mud" → /improve-architecture
+- "zoom out / I don't understand this / explain this area / map of X /
+  overview / bigger picture" → /zoom-out
+- "be brief / shorter / terse / less tokens / no filler / less verbose"
+  → /caveman
+- "new skill / make a skill / scaffold a skill / add slash command /
+  skill template" → /write-a-skill
+```
+
+### Tuning over time
+
+Each skill's `description:` is the source of truth for auto-fire. If a
+phrasing should have fired a skill but didn't, extend that skill's
+description directly. The cheatsheet above is a backstop; the descriptions
+are the front line.
 
 ## Design notes
 
