@@ -33,6 +33,17 @@ Each slice is a **tracer bullet** — a thin cut through every layer (schema, AP
 - Prefer many thin slices over few thick ones
 </vertical-slice-rules>
 
+### Suggest an agent per AFK slice
+
+For every **AFK** slice, scan the session's available agent list (the harness exposes name + one-line description for each). Pick the single agent whose specialty most directly matches the slice content. Prefer specific over generic — `react-specialist` over `frontend-developer` when the slice is React-clear; `postgres-pro` over `database-administrator` when it's PostgreSQL-clear.
+
+Use the agent name **verbatim** as it appears in the available-agents list (including any plugin namespace prefix like `voltagent-lang:react-specialist`) so the user / next agent can pass it straight to `subagent_type`.
+
+Skip the suggestion when:
+- The slice is **HITL** — human is the agent.
+- No available agent fits well — emit no field rather than a forced match.
+- The session exposes no specialist agents — emit no field.
+
 ## 4. Quiz the user
 
 Show the proposed breakdown as a numbered list. For each slice:
@@ -40,6 +51,7 @@ Show the proposed breakdown as a numbered list. For each slice:
 - **Title**: short descriptive name
 - **Type**: HITL / AFK
 - **Blocked by**: which other slices must complete first
+- **Suggested agent**: pick from available agents (AFK only, omit if no good match)
 - **User stories covered**: which user stories this addresses (if the source had them)
 
 Ask:
@@ -47,6 +59,7 @@ Ask:
 - Granularity right? (too coarse / too fine)
 - Dependencies right?
 - HITL/AFK marking right?
+- Agent suggestions right? (override per slice, drop entirely, or fine as-is)
 
 Iterate until the user approves.
 
@@ -60,6 +73,7 @@ Write the approved breakdown using this template, to the target picked in step 1
 ## Slice 1 — <title> (AFK | HITL)
 **What to build**: <one-paragraph description of the end-to-end behavior, not layer-by-layer implementation>
 **Blocked by**: none | Slice <N>
+**Suggested agent**: <agent name verbatim from available list — omit line entirely for HITL or when no good match>
 
 - [ ] <acceptance criterion 1>
 - [ ] <acceptance criterion 2>
