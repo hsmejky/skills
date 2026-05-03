@@ -1,0 +1,9 @@
+{
+  "files.associations": { "*.md": "markdown" },
+  "yaml.schemas": {},
+  "cSpell.import": ["${workspaceFolder}/cspell.json"],
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.formatOnSave": false
+  }
+}

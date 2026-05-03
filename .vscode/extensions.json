@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "yzhang.markdown-all-in-one",
+    "DavidAnson.vscode-markdownlint",
+    "bierner.markdown-preview-github-styles",
+    "bierner.markdown-emoji",
+    "bierner.markdown-mermaid",
+    "redhat.vscode-yaml",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
