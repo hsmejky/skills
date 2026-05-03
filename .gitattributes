@@ -1,0 +1,17 @@
+# Normalize all text files to LF on commit. Eliminates the
+# "LF will be replaced by CRLF" warnings on Windows.
+* text=auto eol=lf
+
+# Windows-specific scripts that require CRLF to run correctly
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# Treat these as binary; never normalize line endings
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary
