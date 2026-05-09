@@ -42,7 +42,6 @@ bash scripts/link-skills.sh
 
 ## Skills
 
-- **[caveman](./skills/caveman/SKILL.md)** — Ultra-compressed communication mode. ~75% token reduction.
 - **[commit](./skills/commit/SKILL.md)** — Create one Conventional Commits commit with imperative subject ≤72 chars, no scope, no body, no co-author footer. Categorizes untracked, scans staged content for secrets and local paths, suggests splitting when diff spans multiple dirs or types.
 - **[debug](./skills/debug/SKILL.md)** — Disciplined diagnosis loop for hard bugs and performance regressions: reproduce → minimise → hypothesise → instrument → fix → regression-test.
 - **[grill-me](./skills/grill-me/SKILL.md)** — Relentlessly interviewed about a plan or design until every branch of the decision tree is resolved. Optionally captures resolved decisions to a markdown file.
@@ -62,19 +61,6 @@ These skills auto-fire when Claude detects a matching phrase in your
 prompt — the triggers live in each skill's `description:` field. To make
 auto-fire frictionless across every session, configure your **user-level
 `~/.claude/CLAUDE.md`** with the two blocks below.
-
-### Always-on caveman
-
-Add to `~/.claude/CLAUDE.md`:
-
-```markdown
-Default communication style: caveman mode (see /caveman skill).
-Drop articles, filler, pleasantries; keep technical terms exact.
-Off only when I say "normal mode".
-```
-
-This references the skill rather than inlining the rules — the skill body
-still loads when invoked, so you only update rules in one place.
 
 ### Skill-trigger cheatsheet
 
@@ -107,8 +93,6 @@ Workflow: /grill-me (analyze) → /to-issues (plan) → /tdd (implement) → /re
   of mud" → /improve-architecture
 - "zoom out / I don't understand this / explain this area / map of X /
   overview / bigger picture" → /zoom-out
-- "be brief / shorter / terse / less tokens / no filler / less verbose"
-  → /caveman
 - "commit this / make a commit / create a commit" → /commit
 - "new skill / make a skill / scaffold a skill / add slash command /
   skill template" → /write-a-skill

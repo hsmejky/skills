@@ -117,7 +117,7 @@ Examples:
 
 - `feat: add commit skill`
 - `fix: handle empty diff in split detection`
-- `docs: clarify trigger phrases in caveman`
+- `docs: clarify trigger phrases in review`
 - `refactor: extract untracked categorization into helper`
 
 ## Step 7 — Commit
