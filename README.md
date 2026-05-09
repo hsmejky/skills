@@ -31,8 +31,17 @@ README into your `~/.claude/CLAUDE.md` to pick up new skills' triggers.
 
 ### Local install (contributors / Windows users)
 
-If you're hacking on this repo locally, or you can't use the plugin install
-on your platform, copy the skills into `~/.claude/skills/`:
+If you can't use the plugin install on your platform, or you want to hack
+on the repo, copy the skills into `~/.claude/skills/` with the install
+script.
+
+**One-liner (no checkout needed, fetches latest `main` from GitHub):**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/hsmejky/skills/main/scripts/install-skills.sh | bash
+```
+
+**From a git checkout:**
 
 ```bash
 git clone https://github.com/hsmejky/skills.git
@@ -40,11 +49,18 @@ cd skills
 bash scripts/install-skills.sh
 ```
 
+**Force GitHub source (even from a checkout, e.g. to install a tag):**
+
+```bash
+bash scripts/install-skills.sh --from-github            # main
+bash scripts/install-skills.sh --from-github v0.1.0     # a tag
+```
+
 The script is cross-platform (Linux, macOS, BSD, Windows under Git Bash /
-MSYS2 / Cygwin / WSL), copies files instead of symlinking, and re-running it
-updates your installed skills. If you've already installed honzik-skills as
-a Claude plugin, the script can be run from anywhere and will copy from the
-plugin install instead of needing a git checkout.
+MSYS2 / Cygwin / WSL), copies files instead of symlinking, and re-running
+it updates your installed skills. Without `--from-github`, it auto-detects
+its source: the git checkout it lives in, or an installed honzik-skills
+plugin found under `~/.claude`.
 
 ## Skills
 

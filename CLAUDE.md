@@ -8,9 +8,10 @@ Each skill entry in the top-level `README.md` must link the skill name to its `S
 
 `scripts/install-skills.sh` copies skills into `~/.claude/skills/`. It is cross-platform (Linux, macOS, BSD, Windows under Git Bash / MSYS2 / Cygwin / WSL) and idempotent — re-run it to update.
 
-Source resolution, in order:
+Three modes:
 
-1. The git checkout the script lives in (preferred when running from this repo).
-2. An installed `honzik-skills` plugin found anywhere under `~/.claude` (located by scanning for `.claude-plugin/plugin.json` with `"name": "honzik-skills"`). This lets the script update a plugin-installed copy without a git checkout.
+1. **Local source (default).** Resolves to either the git checkout the script lives in, or an installed `honzik-skills` plugin found anywhere under `~/.claude` (located by scanning for `.claude-plugin/plugin.json` with `"name": "honzik-skills"`).
+2. **GitHub source.** `--from-github [REF]` downloads `<repo>/archive/<REF>.tar.gz` (default `main`; works for branches, tags, or commit SHAs), extracts it, and installs from there.
+3. **Curl-pipe.** When invoked via `curl ... | bash` (no script file on disk), `--from-github` is enabled automatically.
 
 When adding a new skill, no script changes are needed — `install-skills.sh` discovers skills by walking `skills/**/SKILL.md`. Just remember the README + `plugin.json` entries above.
