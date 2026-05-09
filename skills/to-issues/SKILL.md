@@ -31,6 +31,7 @@ Each slice is a **tracer bullet** — a thin cut through every layer (schema, AP
 - Each slice delivers a narrow but COMPLETE path through every layer
 - A completed slice is demoable or verifiable on its own
 - Prefer many thin slices over few thick ones
+- AFK slices end with a `/review` gate run by the slice driver, not the implementer subagent. If verdict is "Changes requested", the driver loops within the slice (address findings, re-run `/review`) until it passes.
 </vertical-slice-rules>
 
 ### Suggest an agent per AFK slice
@@ -77,9 +78,13 @@ Write the approved breakdown using this template, to the target picked in step 1
 
 - [ ] <acceptance criterion 1>
 - [ ] <acceptance criterion 2>
+- [ ] `/review` against slice description — verdict not "Changes requested" (AFK only; run by slice driver, not implementer subagent)
 
 ## Slice 2 — <title> (AFK | HITL)
 ...
+
+## Final review
+- [ ] `/review` against the full spec — verdict not "Changes requested"
 </plan-template>
 
 Slices are H2 headings so they fold cleanly. Each slice gets its own checkbox group. The user works the plan top-down, ticking criteria as slices land.
