@@ -1,12 +1,11 @@
 {
   "name": "honzik-skills",
-  "description": "Jan Smejkal's personal Claude Code skills — opinionated workflow tools for analyze → plan → implement → review, plus utilities (caveman, commit, debug, triage, zoom-out, write-a-skill).",
+  "description": "Jan Smejkal's personal Claude Code skills — opinionated workflow tools for analyze → plan → implement → review, plus utilities (commit, debug, triage, zoom-out, write-a-skill).",
   "version": "0.1.0",
   "author": {
     "name": "Jan Smejkal"
   },
   "skills": [
-    "./skills/caveman",
     "./skills/commit",
     "./skills/debug",
     "./skills/grill-me",
