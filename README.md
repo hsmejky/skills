@@ -29,16 +29,22 @@ discoverable across sessions.
 When a new tagged release lands, re-paste the cheatsheet block from this
 README into your `~/.claude/CLAUDE.md` to pick up new skills' triggers.
 
-### Local development install (contributors)
+### Local install (contributors / Windows users)
 
-If you're hacking on this repo locally, symlink the skills into
-`~/.claude/skills/` instead:
+If you're hacking on this repo locally, or you can't use the plugin install
+on your platform, copy the skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/hsmejky/skills.git
 cd skills
-bash scripts/link-skills.sh
+bash scripts/install-skills.sh
 ```
+
+The script is cross-platform (Linux, macOS, BSD, Windows under Git Bash /
+MSYS2 / Cygwin / WSL), copies files instead of symlinking, and re-running it
+updates your installed skills. If you've already installed honzik-skills as
+a Claude plugin, the script can be run from anywhere and will copy from the
+plugin install instead of needing a git checkout.
 
 ## Skills
 
