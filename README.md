@@ -29,16 +29,38 @@ discoverable across sessions.
 When a new tagged release lands, re-paste the cheatsheet block from this
 README into your `~/.claude/CLAUDE.md` to pick up new skills' triggers.
 
-### Local development install (contributors)
+### Local install (contributors / Windows users)
 
-If you're hacking on this repo locally, symlink the skills into
-`~/.claude/skills/` instead:
+If you can't use the plugin install on your platform, or you want to hack
+on the repo, copy the skills into `~/.claude/skills/` with the install
+script.
+
+**One-liner (no checkout needed, fetches latest `main` from GitHub):**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/hsmejky/skills/main/scripts/install-skills.sh | bash
+```
+
+**From a git checkout:**
 
 ```bash
 git clone https://github.com/hsmejky/skills.git
 cd skills
-bash scripts/link-skills.sh
+bash scripts/install-skills.sh
 ```
+
+**Force GitHub source (even from a checkout, e.g. to install a tag):**
+
+```bash
+bash scripts/install-skills.sh --from-github            # main
+bash scripts/install-skills.sh --from-github v0.1.0     # a tag
+```
+
+The script is cross-platform (Linux, macOS, BSD, Windows under Git Bash /
+MSYS2 / Cygwin / WSL), copies files instead of symlinking, and re-running
+it updates your installed skills. Without `--from-github`, it auto-detects
+its source: the git checkout it lives in, or an installed honzik-skills
+plugin found under `~/.claude`.
 
 ## Skills
 
